@@ -7,7 +7,7 @@ import {Context as BotContext} from './bot.d'
 dotenv.config()
 
 
-const app = createApp()
+export const app = createApp()
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
 	const name  = req.headers['x-github-event'] || req.headers['X-GitHub-Event']
