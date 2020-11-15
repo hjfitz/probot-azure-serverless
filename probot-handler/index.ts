@@ -33,8 +33,8 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
 	await app.handle(botContext) 
 
 	context.res = {
-		status: 200, /* Defaults to 200 */
-		body: 'oi' 
+		status: 200, 
+		body: 'handled' 
 	}
 
 }
