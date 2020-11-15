@@ -1,0 +1,74 @@
+{
+  "name": "azure-faas-probot",
+  "version": "1.0.0",
+  "description": "A Probot app",
+  "author": "Harry Fitzgerald <hjfitz@pm.me>",
+  "license": "GPL-3.0",
+  "repository": "git@github.com:hjfitz/probot-azure-serverless.git",
+  "homepage": "https://github.com/hjfitz/probot-azure-serverless",
+  "bugs": "https://github.com/hjfitz/probot-azure-serverless/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app",
+	"azure",
+	"azurefunctions",
+	"serverless",
+	"faas"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon",
+    "start": "probot run ./lib/bot.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "@azure/functions": "^1.2.2",
+    "@octokit/app": "^4.2.1",
+    "@octokit/auth-app": "^2.4.11",
+    "@octokit/rest": "^18.0.3",
+    "@types/bunyan": "^1.8.6",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "is-base64": "^1.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.0",
+    "probot": "^9.5.3",
+    "probot-serverless-azurefunctions": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/is-base64": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "eslint": "^7.6.0",
+    "jest": "^24.9.0",
+    "nock": "^12.0.0",
+    "nodemon": "^2.0.0",
+    "smee-client": "^1.1.0",
+    "standard": "^14.3.1",
+    "typescript": "^3.9.7"
+  },
+  "engines": {
+    "node": ">= 12.x.x"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "ignore": [
+      "local-clones"
+    ],
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
